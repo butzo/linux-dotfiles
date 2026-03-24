@@ -1,0 +1,11 @@
+# Matugen Configuration File
+
+[config]
+reload_apps = true
+
+# [config.wallpaper]
+
+
+[templates.hyprlock]
+input_path = "~/.config/matugen/templates/hyprlock_colors.conf"
+output_path = "~/.config/hypr/hyprlock_colors.conf"

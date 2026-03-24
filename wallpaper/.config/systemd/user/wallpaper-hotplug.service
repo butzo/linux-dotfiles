@@ -1,0 +1,6 @@
+[Unit]
+Description=Reload hyprpaper wallpaper on monitor hotplug
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/wallpaper/set_wallpaper.sh

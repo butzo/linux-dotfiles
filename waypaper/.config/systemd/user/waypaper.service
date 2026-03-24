@@ -1,0 +1,8 @@
+[Unit]
+Description=Set a random wallpaper with waypaper
+
+[Service]
+Type=oneshot
+Environment=DEBUG_WAYPAPER_SERVICE=1
+#Environment=HYPRLAND_INSTANCE_SIGNATURE=%EHYPRLAND_INSTANCE_SIGNATURE
+ExecStart=waypaper --random

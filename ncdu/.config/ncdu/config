@@ -1,0 +1,7 @@
+--extended
+--exclude /.snapshots
+--show-itemcount
+#--show-mtime
+--show-hidden
+--confirm-delete
+--color dark

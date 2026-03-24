@@ -1,0 +1,10 @@
+[Unit]
+Description=Signal Desktop
+
+[Service]
+ExecStart=/usr/bin/signal-desktop --start-in-tray
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
+

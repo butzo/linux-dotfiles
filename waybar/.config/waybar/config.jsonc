@@ -1,0 +1,54 @@
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+    "layer": "top",
+    "position": "top",
+    // "height": 10,
+    "margin-left": 0, // 10,
+    "margin-bottom": 0,
+    "margin-right": 0, //10,
+    "spacing": 0, // Gaps between modules (4px)
+    "modules-left": [
+        // "custom/rofi",
+        // "hyprland/submap",
+        "cpu",
+        "memory",
+        "custom/storage",
+        // "disk",
+        "temperature",
+        //"idle_inhibitor",
+        //"mpd"
+        // "hyprland/window",
+        "custom/updates",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/power",
+        "clock"
+        //"custom/gammastep"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "custom/screenshot",
+        "custom/touchscreen-disable",
+        "custom/tablet-mode",
+        "custom/tablet-orientation",
+        "custom/wacom-output",
+        //"pulseaudio",
+        "custom/spotify",
+        "wireplumber",
+        "backlight",
+        "custom/hyprsunset",
+        "custom/weather",
+        "tray",
+        "battery"
+        // "clock#1",
+        // "clock#2",
+        // "clock#3",
+        // "clock#date",
+    ],
+    "include": [
+        "modules.jsonc"
+    ]
+}
