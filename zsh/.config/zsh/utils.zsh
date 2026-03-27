@@ -4,24 +4,25 @@ load-zsh-config() {
     local pkg="$1"
     local config_file=$(find -L "$HOME/.config/zsh" -maxdepth 1 -name "${pkg}.*" -print -quit)
     
-    if [[ ! -f "$config_file" ]]; then
-        echo "Configuration $config_file for '$pkg' not found."
-        return
-    fi
-    
     if ! command -v "$pkg" &> /dev/null; then
-        echo "Package '$pkg' not found."
-        read -q "choice?Install $pkg? (y/n/d-delete config): "
+        echo "Package '$pkg' not found. Install $pkg? (y/N/d-delete config): "
+        read -k choice?
         echo
         case "$choice" in
-            y) $(get-install-cmd) "$pkg" ;;
-            d) rm "$config_file" ;;
-            *) return ;;
+            y|Y) $(get-install-cmd) "$pkg" ;;
+            d|D) rm "$config_file" && echo "$config_file file deleted." && return ;;
+            n|N) echo "Installation cancelled." && return ;;
+            *) echo "Invalid choice. Installation cancelled." && return ;;
         esac
     fi
     
     if ! command -v "$pkg" &> /dev/null; then
         echo "Package '$pkg' installation failed."
+        return
+    fi
+    
+    if [[ ! -f "$config_file" ]]; then
+        echo "Configuration $config_file for '$pkg' not found."
         return
     fi
     source "$config_file"
